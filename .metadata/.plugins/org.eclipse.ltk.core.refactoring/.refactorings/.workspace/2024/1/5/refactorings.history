@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/ATM_CARD/gpio.c" element2="/ATM_CARD/gpio.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1706552428337"/>&#x0A;<refactoring comment="Delete resource &apos;ATM_Machine/Card.c&apos;" deleteContents="false" description="Delete resource &apos;ATM_Machine/Card.c&apos;" element1="/ATM_Machine/Card.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1706555043624"/>
+</session>

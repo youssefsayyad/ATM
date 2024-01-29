@@ -1,0 +1,50 @@
+/*************************************1*****************************************
+ *
+ * Module: ATM Card
+ *
+ * File Name: Card.c
+ *
+ * Description: Source file for the ATM Card
+ *
+ * Author: Youssef ElSayyad
+ *
+ *******************************************************************************/
+#include "Card.h"
+/*******************************************************************************
+ *                      Functions Definitions                                  *
+ *******************************************************************************/
+/* Description : Function Receives IBAN from the PC terminal via UART */
+void IBAN_Recieve(uint8 *IBAN) {
+	for (uint8 charIndex = 0; charIndex < 10; charIndex++) {
+			IBAN[charIndex]=USART_recieveByte();
+		}
+}
+/* Description : Function sends the IBAN to ATM Machine ECU via SPI */
+void IBAN_Send(uint8 *IBAN) {
+	for (uint8 charIndex = 0; charIndex < 10; charIndex++) {
+		SPI_sendReceiveByte(IBAN[charIndex]);
+	}
+}
+int main() {
+	/*String to receive the IBAN from PC terminal*/
+	uint8 IBAN[11];
+	/*USART Structure Configuration
+	 * Mode:ASYNCHRONZIED
+	 * Parity:DISABLED
+	 * STOP_BIT: ONEBIT
+	 * BIT-DATA: 8BITS
+	 * BAUD RATE:9600			*/
+	USART_ConfigType Config_Ptr = { ASYNCH, DISABLED, ONEBIT, EIGHTBITS, 9600 };
+
+	/*Initializing the USART*/
+	USART_init(&Config_Ptr);
+
+	/*Initializing the SPI*/
+
+	/*Receiving the IBAN via UART*/
+	IBAN_Recieve(IBAN);
+
+	/*Sending the IBAN via SPI*/
+	SPI_initMaster();
+	IBAN_Send(IBAN);
+}

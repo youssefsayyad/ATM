@@ -1,0 +1,18 @@
+/*************************************1*****************************************
+ *
+ * Module: Card
+ *
+ * File Name: Card.h
+ *
+ * Description: Header file for the ATM Machine
+ *
+ * Author: Youssef ElSayyad
+ *
+ *******************************************************************************/
+
+#ifndef ATM_H_
+#define ATM_H_
+
+
+
+#endif /* ATM_H_ */

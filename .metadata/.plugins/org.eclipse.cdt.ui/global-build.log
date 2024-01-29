@@ -1,0 +1,301 @@
+22:06:51 **** Incremental Build of configuration Debug for project ATM_CARD ****
+make all 
+Building file: ../Card.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
+In file included from ../Card.h:16,
+                 from ../Card.c:12:
+../usart.h:17:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+../Card.c: In function 'main':
+../Card.c:43: warning: passing argument 1 of 'LCD_displayString' from incompatible pointer type
+../Card.c:48: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../Card.c
+ 
+Building target: ATM_CARD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
+Finished building target: ATM_CARD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
+Finished building: ATM_CARD.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8894 bytes (27.1% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:06:59 **** Incremental Build of configuration Debug for project ATM_CARD ****
+make all 
+Building file: ../Card.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
+In file included from ../Card.h:16,
+                 from ../Card.c:12:
+../usart.h:17:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+../Card.c: In function 'main':
+../Card.c:43: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+../Card.c:48: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../Card.c
+ 
+Building target: ATM_CARD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
+Finished building target: ATM_CARD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
+Finished building: ATM_CARD.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8894 bytes (27.1% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:07:00 **** Incremental Build of configuration Debug for project ATM_Machine ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7982 bytes (24.4% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:07:50 **** Incremental Build of configuration Debug for project ATM_CARD ****
+make all 
+Building file: ../Card.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
+In file included from ../Card.h:16,
+                 from ../Card.c:12:
+../usart.h:17:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+../Card.c: In function 'main':
+../Card.c:43: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+../Card.c:48: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../Card.c
+ 
+Building target: ATM_CARD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
+Finished building target: ATM_CARD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
+Finished building: ATM_CARD.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8898 bytes (27.2% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:07:50 **** Incremental Build of configuration Debug for project ATM_Machine ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7982 bytes (24.4% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:10:39 **** Incremental Build of configuration Debug for project ATM_CARD ****
+make all 
+Building file: ../Card.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
+In file included from ../Card.h:16,
+                 from ../Card.c:12:
+../usart.h:17:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+../Card.c: In function 'main':
+../Card.c:43: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+../Card.c:49: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../Card.c
+ 
+Building target: ATM_CARD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
+Finished building target: ATM_CARD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
+Finished building: ATM_CARD.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8906 bytes (27.2% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:10:40 **** Incremental Build of configuration Debug for project ATM_Machine ****
+make all 
+Building file: ../ATM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ATM.d" -MT"ATM.o" -c -o "ATM.o" "../ATM.c"
+../ATM.c:17: error: conflicting types for 'IBAN_Recieve'
+../ATM.h:22: error: previous declaration of 'IBAN_Recieve' was here
+../ATM.c: In function 'main':
+../ATM.c:26: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+../ATM.c:30: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+make: *** [ATM.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:10:51 **** Incremental Build of configuration Debug for project ATM_CARD ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8906 bytes (27.2% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:10:52 **** Incremental Build of configuration Debug for project ATM_Machine ****
+make all 
+Building file: ../ATM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ATM.d" -MT"ATM.o" -c -o "ATM.o" "../ATM.c"
+../ATM.c: In function 'main':
+../ATM.c:26: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+../ATM.c:30: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+Finished building: ../ATM.c
+ 
+Building target: ATM_Machine.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_Machine.map -mmcu=atmega32 -o "ATM_Machine.elf"  ./ATM.o ./gpio.o ./lcd.o ./spi.o   
+Finished building target: ATM_Machine.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_Machine.elf  >"ATM_Machine.lss"
+Finished building: ATM_Machine.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8072 bytes (24.6% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:15:47 **** Incremental Build of configuration Debug for project ATM_CARD ****
+make all 
+Building file: ../Card.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
+In file included from ../Card.h:16,
+                 from ../Card.c:12:
+../usart.h:17:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+Finished building: ../Card.c
+ 
+Building target: ATM_CARD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
+Finished building target: ATM_CARD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
+Finished building: ATM_CARD.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+22:15:48 **** Incremental Build of configuration Debug for project ATM_Machine ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8072 bytes (24.6% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

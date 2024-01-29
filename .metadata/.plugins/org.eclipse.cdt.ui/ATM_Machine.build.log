@@ -1,0 +1,20 @@
+22:15:48 **** Incremental Build of configuration Debug for project ATM_Machine ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8072 bytes (24.6% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:15:48 Build Finished. 0 errors, 0 warnings. (took 174ms)
+

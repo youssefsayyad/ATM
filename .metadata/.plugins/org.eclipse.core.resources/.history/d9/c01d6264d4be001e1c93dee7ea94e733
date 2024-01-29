@@ -1,0 +1,20 @@
+/*************************************1*****************************************
+ *
+ * Module: Card
+ *
+ * File Name: Card.h
+ *
+ * Description: Header file for the ATM Card
+ *
+ * Author: Youssef ElSayyad
+ *
+ *******************************************************************************/
+#ifndef CARD_H_
+#define CARD_H_
+
+#include "spi.h"
+#include "usart.h"
+#include "std_types.h"
+#include "common_macros.h"
+
+#endif /* CARD_H_ */

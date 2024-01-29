@@ -1,0 +1,38 @@
+22:15:47 **** Incremental Build of configuration Debug for project ATM_CARD ****
+make all 
+Building file: ../Card.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
+In file included from ../Card.h:16,
+                 from ../Card.c:12:
+../usart.h:17:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+Finished building: ../Card.c
+ 
+Building target: ATM_CARD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
+Finished building target: ATM_CARD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
+Finished building: ATM_CARD.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:15:48 Build Finished. 0 errors, 1 warnings. (took 515ms)
+
