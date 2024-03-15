@@ -1,231 +1,72 @@
-22:06:51 **** Incremental Build of configuration Debug for project ATM_CARD ****
-make all 
-Building file: ../Card.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
-In file included from ../Card.h:16,
-                 from ../Card.c:12:
-../usart.h:17:1: warning: "F_CPU" redefined
-<command-line>: warning: this is the location of the previous definition
-../Card.c: In function 'main':
-../Card.c:43: warning: passing argument 1 of 'LCD_displayString' from incompatible pointer type
-../Card.c:48: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-Finished building: ../Card.c
- 
-Building target: ATM_CARD.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
-Finished building target: ATM_CARD.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
-Finished building: ATM_CARD.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    8894 bytes (27.1% Full)
-(.text + .data + .bootloader)
-
-Data:         20 bytes (1.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:06:59 **** Incremental Build of configuration Debug for project ATM_CARD ****
-make all 
-Building file: ../Card.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
-In file included from ../Card.h:16,
-                 from ../Card.c:12:
-../usart.h:17:1: warning: "F_CPU" redefined
-<command-line>: warning: this is the location of the previous definition
-../Card.c: In function 'main':
-../Card.c:43: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-../Card.c:48: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-Finished building: ../Card.c
- 
-Building target: ATM_CARD.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
-Finished building target: ATM_CARD.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
-Finished building: ATM_CARD.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    8894 bytes (27.1% Full)
-(.text + .data + .bootloader)
-
-Data:         20 bytes (1.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:07:00 **** Incremental Build of configuration Debug for project ATM_Machine ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    7982 bytes (24.4% Full)
-(.text + .data + .bootloader)
-
-Data:          8 bytes (0.4% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:07:50 **** Incremental Build of configuration Debug for project ATM_CARD ****
-make all 
-Building file: ../Card.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
-In file included from ../Card.h:16,
-                 from ../Card.c:12:
-../usart.h:17:1: warning: "F_CPU" redefined
-<command-line>: warning: this is the location of the previous definition
-../Card.c: In function 'main':
-../Card.c:43: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-../Card.c:48: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-Finished building: ../Card.c
- 
-Building target: ATM_CARD.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
-Finished building target: ATM_CARD.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
-Finished building: ATM_CARD.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    8898 bytes (27.2% Full)
-(.text + .data + .bootloader)
-
-Data:         20 bytes (1.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:07:50 **** Incremental Build of configuration Debug for project ATM_Machine ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    7982 bytes (24.4% Full)
-(.text + .data + .bootloader)
-
-Data:          8 bytes (0.4% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:10:39 **** Incremental Build of configuration Debug for project ATM_CARD ****
-make all 
-Building file: ../Card.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
-In file included from ../Card.h:16,
-                 from ../Card.c:12:
-../usart.h:17:1: warning: "F_CPU" redefined
-<command-line>: warning: this is the location of the previous definition
-../Card.c: In function 'main':
-../Card.c:43: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-../Card.c:49: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-Finished building: ../Card.c
- 
-Building target: ATM_CARD.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
-Finished building target: ATM_CARD.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
-Finished building: ATM_CARD.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    8906 bytes (27.2% Full)
-(.text + .data + .bootloader)
-
-Data:         20 bytes (1.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:10:40 **** Incremental Build of configuration Debug for project ATM_Machine ****
+19:22:54 **** Incremental Build of configuration Debug for project ATM_Machine ****
 make all 
 Building file: ../ATM.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ATM.d" -MT"ATM.o" -c -o "ATM.o" "../ATM.c"
-../ATM.c:17: error: conflicting types for 'IBAN_Recieve'
-../ATM.h:22: error: previous declaration of 'IBAN_Recieve' was here
-../ATM.c: In function 'main':
-../ATM.c:26: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-../ATM.c:30: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-make: *** [ATM.o] Error 1
-"make all" terminated with exit code 2. Build might be incomplete.
-22:10:51 **** Incremental Build of configuration Debug for project ATM_CARD ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    8906 bytes (27.2% Full)
-(.text + .data + .bootloader)
-
-Data:         20 bytes (1.0% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:10:52 **** Incremental Build of configuration Debug for project ATM_Machine ****
-make all 
-Building file: ../ATM.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ATM.d" -MT"ATM.o" -c -o "ATM.o" "../ATM.c"
-../ATM.c: In function 'main':
-../ATM.c:26: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
-../ATM.c:30: warning: pointer targets in passing argument 1 of 'LCD_displayString' differ in signedness
+In file included from ../ATM.h:24,
+                 from ../ATM.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
 Finished building: ../ATM.c
+ 
+Building file: ../buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"buzzer.d" -MT"buzzer.o" -c -o "buzzer.o" "../buzzer.c"
+Finished building: ../buzzer.c
+ 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+Finished building: ../dc_motor.c
+ 
+Building file: ../external_eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"external_eeprom.d" -MT"external_eeprom.o" -c -o "external_eeprom.o" "../external_eeprom.c"
+Finished building: ../external_eeprom.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+In file included from ../keypad.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../keypad.c
+ 
+Building file: ../lcd.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"lcd.d" -MT"lcd.o" -c -o "lcd.o" "../lcd.c"
+In file included from ../lcd.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../lcd.c: In function 'LCD_intgerToString':
+../lcd.c:209: warning: implicit declaration of function 'itoa'
+Finished building: ../lcd.c
+ 
+Building file: ../pwm.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"pwm.d" -MT"pwm.o" -c -o "pwm.o" "../pwm.c"
+Finished building: ../pwm.c
+ 
+Building file: ../spi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"spi.d" -MT"spi.o" -c -o "spi.o" "../spi.c"
+Finished building: ../spi.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+Finished building: ../timer1.c
+ 
+Building file: ../twi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"twi.d" -MT"twi.o" -c -o "twi.o" "../twi.c"
+Finished building: ../twi.c
  
 Building target: ATM_Machine.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,ATM_Machine.map -mmcu=atmega32 -o "ATM_Machine.elf"  ./ATM.o ./gpio.o ./lcd.o ./spi.o   
+avr-gcc -Wl,-Map,ATM_Machine.map -mmcu=atmega32 -o "ATM_Machine.elf"  ./ATM.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./keypad.o ./lcd.o ./pwm.o ./spi.o ./timer1.o ./twi.o   
 Finished building target: ATM_Machine.elf
  
 Invoking: AVR Create Extended Listing
@@ -238,42 +79,24 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    8072 bytes (24.6% Full)
+Program:   15126 bytes (46.2% Full)
 (.text + .data + .bootloader)
 
-Data:         14 bytes (0.7% Full)
+Data:        219 bytes (10.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-22:15:47 **** Incremental Build of configuration Debug for project ATM_CARD ****
+11:48:36 **** Build of configuration Debug for project ATM_CARD ****
 make all 
-Building file: ../Card.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Card.d" -MT"Card.o" -c -o "Card.o" "../Card.c"
-In file included from ../Card.h:16,
-                 from ../Card.c:12:
-../usart.h:17:1: warning: "F_CPU" redefined
-<command-line>: warning: this is the location of the previous definition
-Finished building: ../Card.c
- 
-Building target: ATM_CARD.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,ATM_CARD.map -mmcu=atmega32 -o "ATM_CARD.elf"  ./Card.o ./gpio.o ./lcd.o ./spi.o ./usart.o   
-Finished building target: ATM_CARD.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S ATM_CARD.elf  >"ATM_CARD.lss"
-Finished building: ATM_CARD.lss
- 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 ATM_CARD.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    8804 bytes (26.9% Full)
+Program:    8832 bytes (27.0% Full)
 (.text + .data + .bootloader)
 
 Data:         14 bytes (0.7% Full)
@@ -282,18 +105,35 @@ Data:         14 bytes (0.7% Full)
 
 Finished building: sizedummy
  
-22:15:48 **** Incremental Build of configuration Debug for project ATM_Machine ****
+11:48:37 **** Incremental Build of configuration Debug for project ATM_Machine ****
 make all 
+Building file: ../ATM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ATM.d" -MT"ATM.o" -c -o "ATM.o" "../ATM.c"
+In file included from ../ATM.h:23,
+                 from ../ATM.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ATM.c
+ 
+Building target: ATM_Machine.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_Machine.map -mmcu=atmega32 -o "ATM_Machine.elf"  ./ATM.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./keypad.o ./lcd.o ./pwm.o ./spi.o ./timer1.o ./twi.o   
+Finished building target: ATM_Machine.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_Machine.elf  >"ATM_Machine.lss"
+Finished building: ATM_Machine.lss
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    8072 bytes (24.6% Full)
+Program:   15122 bytes (46.1% Full)
 (.text + .data + .bootloader)
 
-Data:         14 bytes (0.7% Full)
+Data:        219 bytes (10.7% Full)
 (.data + .bss + .noinit)
 
 

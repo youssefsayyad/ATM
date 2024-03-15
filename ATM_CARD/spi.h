@@ -58,5 +58,7 @@ void SPI_sendString(const uint8 *str);
  * Receive the required string until the '#' symbol through SPI from the other SPI device.
  */
 void SPI_receiveString(uint8 *str);
+void SPI_deInit(void);
+
 
 #endif

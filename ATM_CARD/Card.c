@@ -42,10 +42,12 @@ int main() {
 	/*Initializing the MCU as SPI Master*/
 	SPI_initMaster();
 	/*Receiving the IBAN from PC Terminal*/
-	IBAN_Recieve(IBAN);
+/*	IBAN_Recieve(IBAN);
 	/*Sending the IBAN to PC ATM Machine*/
-	IBAN_Send(IBAN);
+	/*IBAN_Send(IBAN);*/
 	while (1) {
-
+		IBAN_Recieve(IBAN);
+		/*Sending the IBAN to PC ATM Machine*/
+		IBAN_Send(IBAN);
 	}
 }

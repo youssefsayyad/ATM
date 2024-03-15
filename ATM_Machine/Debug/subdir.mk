@@ -5,21 +5,42 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../ATM.c \
+../buzzer.c \
+../dc_motor.c \
+../external_eeprom.c \
 ../gpio.c \
+../keypad.c \
 ../lcd.c \
-../spi.c 
+../pwm.c \
+../spi.c \
+../timer1.c \
+../twi.c 
 
 OBJS += \
 ./ATM.o \
+./buzzer.o \
+./dc_motor.o \
+./external_eeprom.o \
 ./gpio.o \
+./keypad.o \
 ./lcd.o \
-./spi.o 
+./pwm.o \
+./spi.o \
+./timer1.o \
+./twi.o 
 
 C_DEPS += \
 ./ATM.d \
+./buzzer.d \
+./dc_motor.d \
+./external_eeprom.d \
 ./gpio.d \
+./keypad.d \
 ./lcd.d \
-./spi.d 
+./pwm.d \
+./spi.d \
+./timer1.d \
+./twi.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

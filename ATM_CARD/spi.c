@@ -145,3 +145,7 @@ void SPI_receiveString(uint8 *str)
 	/* After receiving the whole string plus the '#', replace the '#' with '\0' */
 	str[i] = '\0';
 }
+void SPI_deInit(void){
+	SPCR &= ~(1<<SPE);
+
+}

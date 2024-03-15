@@ -1,20 +1,37 @@
-22:15:48 **** Incremental Build of configuration Debug for project ATM_Machine ****
+11:48:37 **** Incremental Build of configuration Debug for project ATM_Machine ****
 make all 
+Building file: ../ATM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"ATM.d" -MT"ATM.o" -c -o "ATM.o" "../ATM.c"
+In file included from ../ATM.h:23,
+                 from ../ATM.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ATM.c
+ 
+Building target: ATM_Machine.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ATM_Machine.map -mmcu=atmega32 -o "ATM_Machine.elf"  ./ATM.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./keypad.o ./lcd.o ./pwm.o ./spi.o ./timer1.o ./twi.o   
+Finished building target: ATM_Machine.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ATM_Machine.elf  >"ATM_Machine.lss"
+Finished building: ATM_Machine.lss
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 ATM_Machine.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    8072 bytes (24.6% Full)
+Program:   15122 bytes (46.1% Full)
 (.text + .data + .bootloader)
 
-Data:         14 bytes (0.7% Full)
+Data:        219 bytes (10.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-22:15:48 Build Finished. 0 errors, 0 warnings. (took 174ms)
+11:48:38 Build Finished. 0 errors, 1 warnings. (took 1s.228ms)
 

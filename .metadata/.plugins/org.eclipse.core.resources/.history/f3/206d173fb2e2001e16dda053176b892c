@@ -1,0 +1,225 @@
+/*************************************1*****************************************
+ *
+ * Module: ATM Machine
+ *
+ * File Name: ATM.c
+ *
+ * Description: Source file for the ATM Machine
+ *
+ * Author: Youssef ElSayyad
+ *
+ *******************************************************************************/
+#include"ATM.h"
+/*******************************************************************************
+ *                           Global Variables                                  *
+ *******************************************************************************/
+uint32 key = 0;
+/*array of functions index to go to the desired system feature*/
+uint8 FeaturesIndex = 0;
+/*array used in receiving the IBAN from the Card ECU */
+uint8 IBAN[5] = "abcde";
+/*structure holding the user card data*/
+struct CardData {
+	uint8 CardIBAN[5];
+	uint32 balance;
+	uint8 CardPin[4];
+};
+struct CardData UserData;
+/*Array of functions of the system features*/
+void (*SystemFeatures[])(void) =
+{IBAN_Recieve,SaveIBAN,User_Data,WithdrawOption,DepositOption,RequestPin,SavePin,CheckPin
+};
+/*******************************************************************************
+ *                      Functions Definitions                                  *
+ *******************************************************************************/
+/* Description : Function Receives IBAN from the Card ECU via SPI */
+void IBAN_Recieve(void) {
+	LCD_displayString("Enter Card IBAN:");
+	for (uint8 charIndex = 0; charIndex < 5; charIndex++) {
+		IBAN[charIndex] = SPI_sendReceiveByte(SPI_DEFAULT_DATA_VALUE);
+	}
+	for (uint8 charIndex = 0; charIndex < 5; charIndex++) {
+		UserData.CardIBAN[charIndex] = IBAN[charIndex];
+	}
+	FeaturesIndex = SaveIBAN_INDEX;
+}
+/* Description : Function Saves IBAN in EEPROM */
+void SaveIBAN(void) {
+	uint8 charIndex = 0;
+	for (charIndex = 0; charIndex < 5; charIndex++) {
+		EEPROM_writeByte((0x0000 + charIndex), UserData.CardIBAN[charIndex]);
+		_delay_ms(10);
+	}
+	LCD_clearScreen();
+	FeaturesIndex = Request_Pin_INDEX;
+}
+/* Description : Function Receives Card Pin from the user */
+void RequestPin(void) {
+	LCD_clearScreen();
+	uint8 count = 0;
+	key = 0;
+	LCD_displayString("Enter NEW Pass:");
+	LCD_moveCursor(1, 0);
+	/*while loop to fill the first password entry array*/
+	while ((key != '=') && (count < 4)) {
+		_delay_ms(300);
+		UserData.CardPin[count]= key;
+		key = KEYPAD_getPressedKey();
+		LCD_displayCharacter('*');
+		count++;
+	}
+	FeaturesIndex = Save_Pin_INDEX;
+}
+/* Description : Function Saves Card Pin in EEPROM */
+void SavePin(void) {
+	/*Saving the password sent by HMI ECU in the EEPROM and sets the Array to default value*/
+	for (int i = 0; i < 4; i++) {
+		EEPROM_writeByte((0x0311 + i), UserData.CardPin[i]);
+		_delay_ms(10);
+	}
+	FeaturesIndex = User_Data_INDEX;
+}
+/* Description : Function to check the Card Pin from the user and the saved pin in EEPROM */
+void CheckPin(void) {
+	LCD_clearScreen();
+	key=0;
+	LCD_displayString("Enter Card Pin");
+	uint8 SavedPin[4],count;
+	uint8 check = 0;
+	static uint8 Error = 0;
+	LCD_moveCursor(1, 0);
+		/*while loop to fill the first password entry array*/
+		while ((key != '=') && (count < 4)) {
+			_delay_ms(300);
+			UserData.CardPin[count] = key;
+			key = KEYPAD_getPressedKey();
+			LCD_intgerToString(UserData.CardPin[count]);
+			count++;
+		}
+		_delay_ms(200);
+	/*Reading the saved password in the EEPROM*/
+	for (int i = 0; i < 4; i++) {
+		EEPROM_readByte((0x0311 + i), &SavedPin[i]);
+		_delay_ms(10);
+	}
+	/*checking if the password sent by HMI ECU matches the one saved in the EEPROM and
+	 * count the number of matching of the elements*/
+	for (int i = 0; i < 5; i++) {
+		if (UserData.CardPin[i] == SavedPin[i]) {
+			check++;
+		}
+	}
+	/*if they match sending to HMI ECU they match and returns SUCCESS*/
+
+	if (check == 5) {
+		FeaturesIndex = User_Data_INDEX;
+	}
+	/*if they dont match sending to HMI ECU they dont match and returns ERROR*/
+	else {
+		if (Error < 3) {
+			Error++;
+			FeaturesIndex = Request_Pin_INDEX;
+		} else {
+			LCD_displayString("Contact Bank");
+			LCD_moveCursor(1, 0);
+			LCD_displayString("For Card Recovery");
+			FeaturesIndex = IBAN_Recieve_INDEX;
+		}
+	}
+}
+/* Description : Function displays the system features for the user*/
+void User_Data(void) {
+	uint8 option = 0;
+	LCD_clearScreen();
+	LCD_displayString("Balance: ");
+	LCD_intgerToString(UserData.balance);
+	LCD_moveCursor(1, 0);
+	LCD_displayString("+:Withdraw");
+	LCD_moveCursor(2, 0);
+	LCD_displayString("-:Deposit");
+	LCD_moveCursor(3, 0);
+	LCD_displayString("*:Eject Card");
+	option = KEYPAD_getPressedKey();
+	switch (option) {
+	case '-': {
+		FeaturesIndex = Deposit_Option_INDEX;
+		break;
+	}
+	case '+': {
+		FeaturesIndex = Withdraw_Option_INDEX;
+		break;
+	}
+	case '*': {
+		LCD_clearScreen();
+		FeaturesIndex = Check_Pin_INDEX;
+	}
+	}
+}
+/* Description : Function displays the system feature "Deposit" for the user and process
+ * the desired amount  */
+void DepositOption(void) {
+	key = 0;
+	uint32 amount = 0;
+	LCD_clearScreen();
+	LCD_displayString("Enter Amount:");
+	LCD_moveCursor(1, 0);
+	while (key != '=') {
+		_delay_ms(200);
+		amount *= 10;
+		amount += key;
+		key = KEYPAD_getPressedKey();
+		LCD_intgerToString(key);
+	}
+	key = 0;
+	LCD_clearScreen();
+	DcMotor_Rotate(CLOCKWISE, 75);
+	LCD_displayString("Please Wait ...");
+	_delay_ms(2000);
+	LCD_clearScreen();
+	LCD_displayString("New Balance is:");
+	UserData.balance += amount;
+	LCD_moveCursor(1, 0);
+	LCD_intgerToString(UserData.balance);
+	_delay_ms(2000);
+	FeaturesIndex = User_Data_INDEX;
+}
+/* Description : Function displays the system feature "WithDraw" for the user and process
+ * the desired amount  */
+void WithdrawOption(void) {
+	key = 0;
+	uint32 amount = 0;
+	LCD_clearScreen();
+	LCD_displayString("Enter Amount:");
+	LCD_moveCursor(1, 0);
+	while (key != '=') {
+		_delay_ms(200);
+		amount *= 10;
+		amount += key;
+		key = KEYPAD_getPressedKey();
+		LCD_intgerToString(key);
+	}
+	key = 0;
+	DcMotor_Rotate(CLOCKWISE, 75);
+	LCD_displayString("Please Wait ...");
+	_delay_ms(2000);
+	LCD_clearScreen();
+	LCD_displayString("New Balance is:");
+	UserData.balance -= amount;
+	LCD_moveCursor(1, 0);
+	LCD_intgerToString(UserData.balance);
+	_delay_ms(2000);
+	FeaturesIndex = User_Data_INDEX;
+}
+int main() {
+	LCD_init();
+	TWI_init();
+	SPI_initSlave();
+	LCD_init();
+	DcMotor_Init();
+	IBAN_Recieve();
+	LCD_clearScreen();
+	while (1) {
+		/*array of functions holding the system functions*/
+		(*SystemFeatures[FeaturesIndex])();
+	}
+}
